@@ -104,15 +104,15 @@ imgLoad.on('fail', instance => {
   dismissLoader();
 });
 
-setTimeout(dismissLoader, 2000);
+setTimeout(dismissLoader, 1000);
 
 function hideLoader() {
-  gsap.to(".loader__count", { duration: 0.8, ease: 'power2.in', y: "100%", delay: 1.8 });
-  gsap.to(".loader__wrapper", { duration: 0.8, ease: 'power4.in', y: "-100%", delay: 2.2 });
+  gsap.to(".loader__count", { duration: 0.5, ease: 'power2.in', y: "100%", delay: 0.1 });
+  gsap.to(".loader__wrapper", { duration: 0.6, ease: 'power4.in', y: "-100%", delay: 0.3 });
 
   setTimeout(() => {
     document.getElementById("loader").classList.add("loaded");
-  }, 3200);
+  }, 900);
 }
 
 function pageAppearance() {
@@ -123,11 +123,11 @@ function pageAppearance() {
     startAt: {y: 120},
     y: 0,
     opacity: 1,
-    delay: 0.8,
+    delay: 0.4,
     stagger: 0.08
   }, '>-=1.1');
   gsap.set(fadeInItems, { opacity: 0 });
-  gsap.to(fadeInItems, { duration: 0.8, ease: 'none', opacity: 1, delay: 3.2 });
+  gsap.to(fadeInItems, { duration: 0.8, ease: 'none', opacity: 1, delay: 1.0 });
 }
 // --------------------------------------------- //
 // Loader & Loading Animation End
