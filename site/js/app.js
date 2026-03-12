@@ -88,23 +88,14 @@ function startLoader() {
     "Usability"
   ];
   let wordIndex = 0;
-  let loaderStack = loaderContent ? loaderContent.querySelector(".loader__stack") : null;
-  let wordsWrap = loaderStack ? loaderStack.querySelector(".loader__words") : null;
-  let wordElement = loaderStack ? loaderStack.querySelector(".loader__word") : null;
+  let wordsWrap = loaderContent ? loaderContent.querySelector(".loader__words") : null;
+  let wordElement = loaderContent ? loaderContent.querySelector(".loader__word") : null;
 
   if (loaderContent && loaderCount) {
-    if (!loaderStack) {
-      loaderStack = document.createElement("div");
-      loaderStack.className = "loader__stack";
-      loaderContent.appendChild(loaderStack);
-    }
-    if (loaderCount.parentElement !== loaderStack) {
-      loaderStack.appendChild(loaderCount);
-    }
     if (!wordsWrap) {
       wordsWrap = document.createElement("div");
       wordsWrap.className = "loader__words";
-      loaderStack.appendChild(wordsWrap);
+      loaderContent.appendChild(wordsWrap);
     }
     if (!wordElement) {
       wordElement = document.createElement("span");
@@ -112,6 +103,12 @@ function startLoader() {
       wordElement.textContent = loaderWords[0];
       wordsWrap.appendChild(wordElement);
     }
+    const positionWords = () => {
+      const countHeight = loaderCount.getBoundingClientRect().height;
+      wordsWrap.style.top = `${countHeight}px`;
+    };
+    positionWords();
+    window.addEventListener("resize", positionWords);
   }
 
   if (wordElement && !loaderWordsInterval) {
@@ -164,7 +161,9 @@ setTimeout(dismissLoader, 2000);
 
 function hideLoader() {
   gsap.to(".loader__count", { duration: 0.8, ease: 'power2.in', y: "100%", delay: 1.8 });
+  gsap.to(".loader__words", { duration: 0.8, ease: 'power2.in', y: "100%", delay: 1.8 });
   gsap.to(".loader__wrapper", { duration: 0.8, ease: 'power4.in', y: "-100%", delay: 2.2 });
+
   setTimeout(() => {
     document.getElementById("loader").classList.add("loaded");
   }, 3200);
