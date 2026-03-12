@@ -554,11 +554,12 @@
             body: JSON.stringify(payload)
           });
 
-          if(res.ok){
+          const data = await res.json();
+          if(res.ok && data.ok){
             document.querySelector('.form-container').querySelector('.form__reply').style.display = 'flex';
             document.getElementById('contact-form').style.display = 'none';
           } else {
-            submitError.innerHTML = 'Something went wrong. Please try again.';
+            submitError.innerHTML = data.error || 'Something went wrong. Please try again.';
             submitBtn.disabled = false;
             submitBtn.querySelector('.btn-caption').textContent = 'Submit';
           }

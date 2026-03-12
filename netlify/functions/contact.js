@@ -1,4 +1,4 @@
-const { neon } = require('@netlify/neon');
+const { neon } = require('@neondatabase/serverless');
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -21,8 +21,14 @@ exports.handler = async (event) => {
     };
   }
 
+  const dbUrl = process.env.NETLIFY_DATABASE_URL;
+  if (!dbUrl) {
+    console.error('NETLIFY_DATABASE_URL is not set');
+    return { statusCode: 500, body: JSON.stringify({ error: 'Database not configured' }) };
+  }
+
   try {
-    const sql = neon();
+    const sql = neon(dbUrl);
 
     await sql`
       CREATE TABLE IF NOT EXISTS submissions (
