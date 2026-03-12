@@ -71,16 +71,55 @@ const fadeInItems = document.querySelectorAll('.loading__fade');
 
 function startLoader() {
   let counterElement = document.querySelector(".loader__count .count__text");
+  if (!counterElement) return;
   let currentValue = 0;
+
+  const loaderContent = document.querySelector(".loader__content");
+  const loaderCount = document.querySelector(".loader__count");
+  const loaderWords = [
+    "Research",
+    "IA",
+    "Wireframes",
+    "Prototyping",
+    "Testing",
+    "Accessibility",
+    "Design Systems",
+    "Interaction",
+    "Usability"
+  ];
+  let wordIndex = 0;
+  let wordElement = document.querySelector(".loader__word");
+
+  if (loaderContent && loaderCount && !wordElement) {
+    const wordsWrap = document.createElement("div");
+    wordsWrap.className = "loader__words";
+    wordElement = document.createElement("span");
+    wordElement.className = "loader__word is-visible";
+    wordElement.textContent = loaderWords[0];
+    wordsWrap.appendChild(wordElement);
+    loaderCount.insertAdjacentElement("afterend", wordsWrap);
+  }
+
+  if (wordElement) {
+    setInterval(() => {
+      wordElement.classList.remove("is-visible");
+      wordIndex = (wordIndex + 1) % loaderWords.length;
+      setTimeout(() => {
+        wordElement.textContent = loaderWords[wordIndex];
+        wordElement.classList.add("is-visible");
+      }, 120);
+    }, 520);
+  }
   function updateCounter() {
     if (currentValue < 100) {
-      let increment = Math.floor(Math.random() * 10) + 1;
+      let increment = Math.floor(Math.random() * 15) + 10;
       currentValue = Math.min(currentValue + increment, 100);
       counterElement.textContent = currentValue;
-      let delay = Math.floor(Math.random() * 120) + 25;
+      let delay = Math.floor(Math.random() * 40) + 20;
       setTimeout(updateCounter, delay);
     }
   }
+
   updateCounter();
 }
 startLoader();
@@ -102,14 +141,14 @@ imgLoad.on('fail', instance => {
   dismissLoader();
 });
 
-setTimeout(dismissLoader, 2000);
+setTimeout(dismissLoader, 1400);
 
 function hideLoader() {
-  gsap.to(".loader__count", { duration: 0.8, ease: 'power2.in', y: "100%", delay: 1.8 });
-  gsap.to(".loader__wrapper", { duration: 0.8, ease: 'power4.in', y: "-100%", delay: 2.2 });
+  gsap.to(".loader__count", { duration: 0.7, ease: 'power2.in', y: "100%", delay: 0.9 });
+  gsap.to(".loader__wrapper", { duration: 0.7, ease: 'power4.in', y: "-100%", delay: 1.2 });
   setTimeout(() => {
     document.getElementById("loader").classList.add("loaded");
-  }, 3200);
+  }, 2000);
 }
 
 function pageAppearance() {
