@@ -1,0 +1,9 @@
+{
+  "name": "portfolio-binayyadav",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Binay Yadav portfolio",
+  "private": true,
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.4"
+  }
+}

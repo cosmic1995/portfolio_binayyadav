@@ -521,14 +521,53 @@
           return true;
       }
       function validateForm(){
-          if(!validateName(),!validatePhone(), !validateEmail() , !validateMsg() ){
-              submitError.innerHTML='Please fix error to submit'
+          if(!validateName() || !validatePhone() || !validateEmail() || !validateMsg()){
+              submitError.innerHTML='Please fix errors to submit';
               setTimeout(function(){
-                  submitError.style.display='none';
+                  submitError.innerHTML='';
               }, 3000);
               return false;
           }
+          return true;
       }
+
+      document.getElementById('contact-form').addEventListener('submit', async function(e){
+        e.preventDefault();
+        if(!validateForm()) return;
+
+        const submitBtn = this.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.querySelector('.btn-caption').textContent = 'Sending…';
+
+        const payload = {
+          name:    document.getElementById('contact-name').value.trim(),
+          company: document.querySelector('input[name="Company"]').value.trim(),
+          email:   document.getElementById('email-id').value.trim(),
+          phone:   document.getElementById('phone-number').value.trim(),
+          message: document.getElementById('msg-id').value.trim()
+        };
+
+        try {
+          const res = await fetch('/.netlify/functions/contact', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
+          });
+
+          if(res.ok){
+            document.querySelector('.form-container').querySelector('.form__reply').style.display = 'flex';
+            document.getElementById('contact-form').style.display = 'none';
+          } else {
+            submitError.innerHTML = 'Something went wrong. Please try again.';
+            submitBtn.disabled = false;
+            submitBtn.querySelector('.btn-caption').textContent = 'Submit';
+          }
+        } catch(err){
+          submitError.innerHTML = 'Network error. Please try again.';
+          submitBtn.disabled = false;
+          submitBtn.querySelector('.btn-caption').textContent = 'Submit';
+        }
+      });
       
     </script>
     
