@@ -11089,6 +11089,7 @@ form textarea:required:valid {
     display: block;
     position: absolute;
     padding: 1.8rem 2rem;
+    max-width: 200px;
     -moz-border-radius: var(--_radius-pt-m);
          border-radius: var(--_radius-pt-m);
     background-color: var(--neutral-transparent);
@@ -11100,30 +11101,33 @@ form textarea:required:valid {
             box-shadow: 0px 4px 8px 0px rgba(var(--pt-purple-rgb), 0.3);
   }
   .hero-09-objects__item.item-01 {
-    top: 25rem;
+    top: 28rem;
+    right: -6rem;
+  }
+  .hero-09-objects__item.item-02 {
+    left: -12rem;
+    top: 32rem;
+  }
+  .hero-09-objects__item.item-03 {
+    right: 18rem;
+    top: 48rem;
+  }
+}
+@media only screen and (min-width: 1600px) {
+  .hero-09-objects__item {
+    max-width: 240px;
+  }
+  .hero-09-objects__item.item-01 {
+    top: 32rem;
     right: -8rem;
   }
   .hero-09-objects__item.item-02 {
     left: -14rem;
-    top: 35rem;
+    top: 28rem;
   }
   .hero-09-objects__item.item-03 {
-    right: 23rem;
-    top: 50rem;
-  }
-}
-@media only screen and (min-width: 1600px) {
-  .hero-09-objects__item.item-01 {
-    top: 35rem;
-    right: -10rem;
-  }
-  .hero-09-objects__item.item-02 {
-    left: -14rem;
-    top: 29rem;
-  }
-  .hero-09-objects__item.item-03 {
-    right: 0rem;
-    top: 47rem;
+    right: 2rem;
+    top: 46rem;
   }
 }
 
