@@ -68,59 +68,10 @@ const imgLoad = imagesLoaded(content);
 const loadingWrap = document.querySelector('.loading-wrap');
 const loadingItems = loadingWrap ? loadingWrap.querySelectorAll('.loading__item') : [];
 const fadeInItems = document.querySelectorAll('.loading__fade');
-let loaderWordsInterval;
 
 function startLoader() {
   let counterElement = document.querySelector(".loader__count .count__text");
   let currentValue = 0;
-  const loaderContent = document.querySelector(".loader__content");
-  const loaderCount = document.querySelector(".loader__count");
-  const loaderWords = [
-    "Research",
-    "UX Strategy",
-    "IA",
-    "Wireframes",
-    "Prototyping",
-    "Testing",
-    "Accessibility",
-    "Design Systems",
-    "Interaction",
-    "Usability"
-  ];
-  let wordIndex = 0;
-  let wordsWrap = loaderContent ? loaderContent.querySelector(".loader__words") : null;
-  let wordElement = loaderContent ? loaderContent.querySelector(".loader__word") : null;
-
-  if (loaderContent && loaderCount) {
-    if (!wordsWrap) {
-      wordsWrap = document.createElement("div");
-      wordsWrap.className = "loader__words";
-      loaderContent.appendChild(wordsWrap);
-    }
-    if (!wordElement) {
-      wordElement = document.createElement("span");
-      wordElement.className = "loader__word is-visible";
-      wordElement.textContent = loaderWords[0];
-      wordsWrap.appendChild(wordElement);
-    }
-    const positionWords = () => {
-      const countHeight = loaderCount.getBoundingClientRect().height;
-      wordsWrap.style.top = `${countHeight}px`;
-    };
-    positionWords();
-    window.addEventListener("resize", positionWords);
-  }
-
-  if (wordElement && !loaderWordsInterval) {
-    loaderWordsInterval = setInterval(() => {
-      wordElement.classList.remove("is-visible");
-      setTimeout(() => {
-        wordIndex = (wordIndex + 1) % loaderWords.length;
-        wordElement.textContent = loaderWords[wordIndex];
-        wordElement.classList.add("is-visible");
-      }, 180);
-    }, 700);
-  }
 
   function updateCounter() {
     if (currentValue < 100) {
@@ -141,10 +92,6 @@ let loaderDismissed = false;
 function dismissLoader() {
   if (loaderDismissed) return;
   loaderDismissed = true;
-  if (loaderWordsInterval) {
-    clearInterval(loaderWordsInterval);
-    loaderWordsInterval = null;
-  }
   hideLoader();
   pageAppearance();
 }
@@ -161,7 +108,6 @@ setTimeout(dismissLoader, 2000);
 
 function hideLoader() {
   gsap.to(".loader__count", { duration: 0.8, ease: 'power2.in', y: "100%", delay: 1.8 });
-  gsap.to(".loader__words", { duration: 0.8, ease: 'power2.in', y: "100%", delay: 1.8 });
   gsap.to(".loader__wrapper", { duration: 0.8, ease: 'power4.in', y: "-100%", delay: 2.2 });
 
   setTimeout(() => {
