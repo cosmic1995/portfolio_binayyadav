@@ -11105,21 +11105,21 @@ form textarea:required:valid {
     z-index: 2;
   }
   .hero-09-objects__item.item-01 {
-    top: 58%;
-    right: -23%;
+    top: 60%;
+    right: -20%;
   }
   .hero-09-objects__item.item-02 {
-    left: -23%;
-    top: 58%;
+    left: -20%;
+    top: 60%;
   }
   .hero-09-objects__item.item-03 {
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 86%;
-    min-width: 220px;
-    padding: 1.4rem 2.4rem;
+    top: 78%;
+    min-width: 240px;
+    padding: 1.6rem 2.6rem;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -11127,21 +11127,21 @@ form textarea:required:valid {
     max-width: 220px;
   }
   .hero-09-objects__item.item-01 {
-    top: 56%;
-    right: -23%;
+    top: 58%;
+    right: -18%;
   }
   .hero-09-objects__item.item-02 {
-    left: -23%;
-    top: 56%;
+    left: -18%;
+    top: 58%;
   }
   .hero-09-objects__item.item-03 {
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 84%;
-    min-width: 230px;
-    padding: 1.6rem 2.6rem;
+    top: 76%;
+    min-width: 260px;
+    padding: 1.8rem 3rem;
   }
 }
 
