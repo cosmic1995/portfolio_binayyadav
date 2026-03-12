@@ -88,14 +88,23 @@ function startLoader() {
     "Usability"
   ];
   let wordIndex = 0;
-  let wordsWrap = loaderContent ? loaderContent.querySelector(".loader__words") : null;
-  let wordElement = loaderContent ? loaderContent.querySelector(".loader__word") : null;
+  let loaderStack = loaderContent ? loaderContent.querySelector(".loader__stack") : null;
+  let wordsWrap = loaderStack ? loaderStack.querySelector(".loader__words") : null;
+  let wordElement = loaderStack ? loaderStack.querySelector(".loader__word") : null;
 
   if (loaderContent && loaderCount) {
+    if (!loaderStack) {
+      loaderStack = document.createElement("div");
+      loaderStack.className = "loader__stack";
+      loaderContent.appendChild(loaderStack);
+    }
+    if (loaderCount.parentElement !== loaderStack) {
+      loaderStack.appendChild(loaderCount);
+    }
     if (!wordsWrap) {
       wordsWrap = document.createElement("div");
       wordsWrap.className = "loader__words";
-      loaderCount.insertAdjacentElement("afterend", wordsWrap);
+      loaderStack.appendChild(wordsWrap);
     }
     if (!wordElement) {
       wordElement = document.createElement("span");
