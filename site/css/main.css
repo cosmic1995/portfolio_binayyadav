@@ -11128,7 +11128,8 @@ form textarea:required:valid {
   }
   .hero-09-objects__item.item-01,
   .hero-09-objects__item.item-02 {
-    max-width: 260px;
+    width: 260px;
+    max-width: none;
   }
   .hero-09-objects__item.item-01 {
     top: 54%;
