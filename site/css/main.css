@@ -11018,13 +11018,13 @@ form textarea:required:valid {
   -webkit-column-gap: 1rem;
      -moz-column-gap: 1rem;
           column-gap: 1rem;
-  row-gap: 1.4rem;
+  row-gap: 2rem;
   margin-top: 16rem;
-  max-width: 680px;
+  max-width: 740px;
 }
 @media only screen and (min-width: 1600px) {
   .hero-09-headline__tags {
-    max-width: 820px;
+    max-width: 880px;
   }
 }
 
@@ -11115,12 +11115,12 @@ form textarea:required:valid {
     min-width: 0;
   }
   .hero-09-objects__item.item-01 {
-    top: 56%;
+    top: 62%;
     right: -40%;
   }
   .hero-09-objects__item.item-02 {
     left: -40%;
-    top: 56%;
+    top: 62%;
   }
   .hero-09-objects__item.item-03 {
     left: 50%;
@@ -11142,12 +11142,12 @@ form textarea:required:valid {
     max-width: none !important;
   }
   .hero-09-objects__item.item-01 {
-    top: 54%;
+    top: 60%;
     right: -40%;
   }
   .hero-09-objects__item.item-02 {
     left: -40%;
-    top: 54%;
+    top: 60%;
   }
   .hero-09-objects__item.item-03 {
     left: 50%;
