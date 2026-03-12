@@ -112,10 +112,10 @@ function startLoader() {
   }
   function updateCounter() {
     if (currentValue < 100) {
-      let increment = Math.floor(Math.random() * 15) + 10;
+      let increment = Math.floor(Math.random() * 8) + 6;
       currentValue = Math.min(currentValue + increment, 100);
       counterElement.textContent = currentValue;
-      let delay = Math.floor(Math.random() * 40) + 20;
+      let delay = Math.floor(Math.random() * 50) + 40;
       setTimeout(updateCounter, delay);
     }
   }
@@ -141,14 +141,14 @@ imgLoad.on('fail', instance => {
   dismissLoader();
 });
 
-setTimeout(dismissLoader, 1400);
+setTimeout(dismissLoader, 1800);
 
 function hideLoader() {
-  gsap.to(".loader__count", { duration: 0.7, ease: 'power2.in', y: "100%", delay: 0.9 });
-  gsap.to(".loader__wrapper", { duration: 0.7, ease: 'power4.in', y: "-100%", delay: 1.2 });
+  gsap.to(".loader__count", { duration: 0.7, ease: 'power2.in', y: "100%", delay: 1.2 });
+  gsap.to(".loader__wrapper", { duration: 0.7, ease: 'power4.in', y: "-100%", delay: 1.5 });
   setTimeout(() => {
     document.getElementById("loader").classList.add("loaded");
-  }, 2000);
+  }, 2300);
 }
 
 function pageAppearance() {
