@@ -898,13 +898,12 @@
     <!-- counters -->
     <script>
       setTimeout(function() {
-        const optionsDefault = { duration: 2.5, useEasing: true };
-        const optionsPlus = { duration: 2.5, useEasing: true, suffix: '+' };
+        const optionsPlus = { duration: 2, useEasing: true, suffix: '+' };
         const statsCounter1 = new countUp.CountUp("stats-counter-1", 9, optionsPlus);
         const statsCounter2 = new countUp.CountUp("stats-counter-2", 20, optionsPlus);
         if (!statsCounter1.error) statsCounter1.start();
         if (!statsCounter2.error) statsCounter2.start();
-      }, 3500);
+      }, 1400);
     </script>
     <!-- Load Scripts End -->
     

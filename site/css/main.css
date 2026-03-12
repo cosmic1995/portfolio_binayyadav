@@ -11089,7 +11089,7 @@ form textarea:required:valid {
     display: block;
     position: absolute;
     padding: 1.8rem 2rem;
-    max-width: 190px;
+    max-width: 240px;
     -moz-border-radius: var(--_radius-pt-m);
          border-radius: var(--_radius-pt-m);
     background-color: var(--neutral-transparent);
