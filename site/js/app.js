@@ -72,11 +72,9 @@ let loaderWordsInterval;
 
 function startLoader() {
   let counterElement = document.querySelector(".loader__count .count__text");
+  let currentValue = 0;
   const loaderContent = document.querySelector(".loader__content");
   const loaderCount = document.querySelector(".loader__count");
-  const loaderWordsWrap = document.querySelector(".loader__words");
-  let currentValue = 0;
-
   const loaderWords = [
     "Research",
     "UX Strategy",
@@ -90,47 +88,31 @@ function startLoader() {
     "Usability"
   ];
   let wordIndex = 0;
-  let wordElements = loaderWordsWrap ? Array.from(loaderWordsWrap.querySelectorAll(".loader__word")) : [];
+  let wordsWrap = loaderContent ? loaderContent.querySelector(".loader__words") : null;
+  let wordElement = loaderContent ? loaderContent.querySelector(".loader__word") : null;
 
   if (loaderContent && loaderCount) {
-    let wordsWrap = loaderWordsWrap;
     if (!wordsWrap) {
       wordsWrap = document.createElement("div");
       wordsWrap.className = "loader__words";
       loaderCount.insertAdjacentElement("afterend", wordsWrap);
     }
-
-    if (wordElements.length === 0) {
-      const wordPrimary = document.createElement("span");
-      wordPrimary.className = "loader__word is-visible";
-      wordPrimary.textContent = loaderWords[0];
-      const wordSecondary = document.createElement("span");
-      wordSecondary.className = "loader__word";
-      wordSecondary.textContent = loaderWords[1];
-      wordsWrap.appendChild(wordPrimary);
-      wordsWrap.appendChild(wordSecondary);
-      wordElements = [wordPrimary, wordSecondary];
-    } else if (wordElements.length === 1) {
-      const wordSecondary = document.createElement("span");
-      wordSecondary.className = "loader__word";
-      wordSecondary.textContent = loaderWords[1];
-      wordsWrap.appendChild(wordSecondary);
-      wordElements = [wordElements[0], wordSecondary];
+    if (!wordElement) {
+      wordElement = document.createElement("span");
+      wordElement.className = "loader__word is-visible";
+      wordElement.textContent = loaderWords[0];
+      wordsWrap.appendChild(wordElement);
     }
   }
 
-  if (wordElements.length >= 2 && !loaderWordsInterval) {
-    let activeIndex = 0;
-    let nextIndex = 1;
+  if (wordElement && !loaderWordsInterval) {
     loaderWordsInterval = setInterval(() => {
-      const nextWordIndex = (wordIndex + 1) % loaderWords.length;
-      const nextEl = wordElements[nextIndex];
-      nextEl.textContent = loaderWords[nextWordIndex];
-      wordElements.forEach((el) => el.classList.remove("is-visible"));
-      nextEl.classList.add("is-visible");
-      wordIndex = nextWordIndex;
-      activeIndex = activeIndex === 0 ? 1 : 0;
-      nextIndex = activeIndex === 0 ? 1 : 0;
+      wordElement.classList.remove("is-visible");
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % loaderWords.length;
+        wordElement.textContent = loaderWords[wordIndex];
+        wordElement.classList.add("is-visible");
+      }, 180);
     }, 700);
   }
 

@@ -347,24 +347,14 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-     -moz-box-orient: vertical;
-     -moz-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   -webkit-box-pack: center;
      -moz-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-align: center;
-     -moz-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   width: 100%;
   z-index: 2;
   color: var(--t-bright);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .loader__count {
@@ -372,12 +362,13 @@
   display: -moz-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-     -moz-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  overflow: hidden;
+  -webkit-box-pack: end;
+     -moz-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  overflow: visible;
   line-height: 1;
+  position: relative;
 }
 .loader__count span {
   display: -webkit-inline-box;
@@ -390,17 +381,18 @@
 }
 
 .loader__words {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
   margin-top: 1.2rem;
   text-align: center;
   height: 2.4rem;
   overflow: hidden;
-  position: relative;
+  white-space: nowrap;
 }
 
 .loader__word {
-  position: absolute;
-  left: 0;
-  right: 0;
   display: inline-block;
   font: normal var(--fw-medium) 1.8rem/1.2 var(--_font-accent);
   color: var(--t-medium);
