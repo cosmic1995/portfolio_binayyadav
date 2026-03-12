@@ -1,4 +1,4 @@
-const { neon } = require('@neondatabase/serverless');
+const { neon } = require('@netlify/neon');
 
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
@@ -22,7 +22,7 @@ exports.handler = async (event) => {
   }
 
   try {
-    const sql = neon(process.env.DATABASE_URL);
+    const sql = neon();
 
     await sql`
       CREATE TABLE IF NOT EXISTS submissions (

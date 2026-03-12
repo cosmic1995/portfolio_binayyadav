@@ -4,6 +4,6 @@
   "description": "Netlify Functions for Binay Yadav portfolio",
   "private": true,
   "dependencies": {
-    "@neondatabase/serverless": "^0.10.4"
+    "@netlify/neon": "^0.1.0"
   }
 }
