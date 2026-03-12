@@ -11103,24 +11103,21 @@ form textarea:required:valid {
        -moz-box-shadow: 0px 4px 8px 0px rgba(var(--pt-purple-rgb), 0.3);
             box-shadow: 0px 4px 8px 0px rgba(var(--pt-purple-rgb), 0.3);
     z-index: 2;
-    top: 55%;
-    left: 50%;
-    --hero-card-offset-x: 0px;
-    --hero-card-offset-y: 0px;
-    -webkit-transform: translate(calc(-50% + var(--hero-card-offset-x)), calc(-50% + var(--hero-card-offset-y)));
-        -ms-transform: translate(calc(-50% + var(--hero-card-offset-x)), calc(-50% + var(--hero-card-offset-y)));
-            transform: translate(calc(-50% + var(--hero-card-offset-x)), calc(-50% + var(--hero-card-offset-y)));
   }
   .hero-09-objects__item.item-01 {
-    --hero-card-offset-x: 185px;
-    --hero-card-offset-y: 30px;
+    top: 58%;
+    right: -23%;
   }
   .hero-09-objects__item.item-02 {
-    --hero-card-offset-x: -185px;
-    --hero-card-offset-y: 30px;
+    left: -23%;
+    top: 58%;
   }
   .hero-09-objects__item.item-03 {
-    --hero-card-offset-y: 150px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: 74%;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -11128,15 +11125,19 @@ form textarea:required:valid {
     max-width: 220px;
   }
   .hero-09-objects__item.item-01 {
-    --hero-card-offset-x: 215px;
-    --hero-card-offset-y: 40px;
+    top: 56%;
+    right: -23%;
   }
   .hero-09-objects__item.item-02 {
-    --hero-card-offset-x: -215px;
-    --hero-card-offset-y: 40px;
+    left: -23%;
+    top: 56%;
   }
   .hero-09-objects__item.item-03 {
-    --hero-card-offset-y: 170px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    top: 72%;
   }
 }
 
