@@ -1,4 +1,4 @@
-/*! ------------------------------------------------
+  /*! ------------------------------------------------
  * Project Name: Rayo - Digital Agency & Personal Portfolio HTML Template
  * Project Description: Elevate your digital presence with Rayo - dynamic and stylish HTML template designed for creative agencies and personal brands. With modern layouts, smooth interactions and a polished aesthetic, Rayo template helps showcase projects, services and expertise with clarity and impact.
  * Tags: mix_design, resume, portfolio, personal page, cv, template, one page, responsive, html5, css3, creative, clean, agency, studio 
@@ -11105,42 +11105,46 @@ form textarea:required:valid {
     z-index: 2;
   }
   .hero-09-objects__item.item-01 {
-    top: 60%;
-    right: -20%;
+    top: 56%;
+    right: -23%;
   }
   .hero-09-objects__item.item-02 {
-    left: -20%;
-    top: 60%;
+    left: -23%;
+    top: 56%;
   }
   .hero-09-objects__item.item-03 {
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 78%;
-    min-width: 240px;
-    padding: 1.6rem 2.6rem;
+    top: 82%;
+    min-width: 250px;
+    padding: 1.6rem 2.8rem;
   }
 }
 @media only screen and (min-width: 1600px) {
   .hero-09-objects__item {
     max-width: 220px;
   }
+  .hero-09-objects__item.item-01,
+  .hero-09-objects__item.item-02 {
+    max-width: 260px;
+  }
   .hero-09-objects__item.item-01 {
-    top: 58%;
-    right: -18%;
+    top: 54%;
+    right: -25%;
   }
   .hero-09-objects__item.item-02 {
-    left: -18%;
-    top: 58%;
+    left: -25%;
+    top: 54%;
   }
   .hero-09-objects__item.item-03 {
     left: 50%;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 76%;
-    min-width: 260px;
+    top: 80%;
+    min-width: 270px;
     padding: 1.8rem 3rem;
   }
 }
