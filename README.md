@@ -2,7 +2,7 @@
 
 Personal portfolio website for **Binay Yadav**, Senior UX Designer. Fully static HTML/CSS/JS site — no build tools, no frameworks, no dependencies to install.
 
-**Live URL:** *(add your Netlify URL here after first deploy)*  
+**Live URL:** https://binayyadav.netlify.app  
 **Repository:** `git@github.com:cosmic1995/portfolio_binayyadav.git`  
 **Contact:** vjbinay@gmail.com  
 **LinkedIn:** https://linkedin.com/in/binayyadav-art
