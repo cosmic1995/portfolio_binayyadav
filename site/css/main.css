@@ -10915,6 +10915,27 @@ form textarea:required:valid {
   }
 }
 
+/* Mobile/desktop visibility toggle for hero caption & tags */
+.hero-caption-desktop,
+.hero-tags-desktop {
+  display: none;
+}
+.hero-caption-mobile,
+.hero-tags-mobile {
+  display: block;
+  padding: 0 3rem;
+}
+@media only screen and (min-width: 1200px) {
+  .hero-caption-desktop,
+  .hero-tags-desktop {
+    display: block;
+  }
+  .hero-caption-mobile,
+  .hero-tags-mobile {
+    display: none;
+  }
+}
+
 .hero-09-headline__caption {
   margin-bottom: 3.6rem;
 }
@@ -10923,6 +10944,10 @@ form textarea:required:valid {
   color: var(--t-bright);
 }
 @media only screen and (min-width: 768px) {
+  .hero-caption-mobile,
+  .hero-tags-mobile {
+    padding: 0 6rem;
+  }
   .hero-09-headline__caption {
     max-width: 500px;
     margin-bottom: 5.4rem;
