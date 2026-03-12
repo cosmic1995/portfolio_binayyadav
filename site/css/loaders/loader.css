@@ -394,9 +394,13 @@
   text-align: center;
   height: 2.4rem;
   overflow: hidden;
+  position: relative;
 }
 
 .loader__word {
+  position: absolute;
+  left: 0;
+  right: 0;
   display: inline-block;
   font: normal var(--fw-medium) 1.8rem/1.2 var(--_font-accent);
   color: var(--t-medium);
