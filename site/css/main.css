@@ -11104,12 +11104,20 @@ form textarea:required:valid {
             box-shadow: 0px 4px 8px 0px rgba(var(--pt-purple-rgb), 0.3);
     z-index: 2;
   }
+  .hero-09-objects__item .mxd-counter__descr {
+    max-width: none;
+  }
+  .hero-09-objects__item.item-01,
+  .hero-09-objects__item.item-02 {
+    width: 360px;
+    max-width: none;
+  }
   .hero-09-objects__item.item-01 {
     top: 56%;
-    right: -23%;
+    right: -50%;
   }
   .hero-09-objects__item.item-02 {
-    left: -23%;
+    left: -50%;
     top: 56%;
   }
   .hero-09-objects__item.item-03 {
@@ -11128,15 +11136,15 @@ form textarea:required:valid {
   }
   .hero-09-objects__item.item-01,
   .hero-09-objects__item.item-02 {
-    width: 260px;
+    width: 400px;
     max-width: none;
   }
   .hero-09-objects__item.item-01 {
     top: 54%;
-    right: -25%;
+    right: -50%;
   }
   .hero-09-objects__item.item-02 {
-    left: -25%;
+    left: -50%;
     top: 54%;
   }
   .hero-09-objects__item.item-03 {
@@ -19829,20 +19837,20 @@ form textarea:required:valid {
 .mxd-tech-stack-cards.grid-cards {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
+  -ms-grid-columns: 1fr 1fr;
   grid-template-columns: repeat(2, 1fr);
   grid-column-gap: 3rem;
   grid-row-gap: 3rem;
 }
 @media only screen and (min-width: 768px) {
   .mxd-tech-stack-cards.grid-cards {
-    -ms-grid-columns: (1fr)[3];
+    -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: repeat(3, 1fr);
   }
 }
 @media only screen and (min-width: 1400px) {
   .mxd-tech-stack-cards.grid-cards {
-    -ms-grid-columns: (1fr)[4];
+    -ms-grid-columns: 1fr 1fr 1fr 1fr;
     grid-template-columns: repeat(4, 1fr);
   }
 }
