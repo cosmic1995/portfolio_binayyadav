@@ -11118,6 +11118,8 @@ form textarea:required:valid {
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     top: 86%;
+    min-width: 220px;
+    padding: 1.4rem 2.4rem;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -11138,6 +11140,8 @@ form textarea:required:valid {
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
     top: 84%;
+    min-width: 230px;
+    padding: 1.6rem 2.6rem;
   }
 }
 
