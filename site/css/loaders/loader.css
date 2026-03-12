@@ -378,27 +378,6 @@
   letter-spacing: -0.06rem;
   color: var(--t-bright);
 }
-
-.loader__words {
-  margin-top: 1.2rem;
-  text-align: center;
-  height: 2.4rem;
-  overflow: hidden;
-}
-
-.loader__word {
-  display: inline-block;
-  font: normal var(--fw-medium) 1.8rem/1.2 var(--_font-accent);
-  color: var(--t-medium);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.loader__word.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 @media only screen and (min-width: 768px) {
   .loader__count span {
     font-size: 8rem;
