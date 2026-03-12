@@ -20912,6 +20912,23 @@ form textarea:required:valid {
   position: relative;
 }
 
+.mxd-project__block img,
+.mxd-project__block .row img {
+  margin-top: 4rem;
+}
+@media only screen and (min-width: 768px) {
+  .mxd-project__block img,
+  .mxd-project__block .row img {
+    margin-top: 5rem;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .mxd-project__block img,
+  .mxd-project__block .row img {
+    margin-top: 6rem;
+  }
+}
+
 .mxd-project__paragraph {
   display: -webkit-box;
   display: -moz-box;
