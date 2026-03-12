@@ -11150,13 +11150,15 @@ form textarea:required:valid {
   }
   .hero-09-objects__item.item-01,
   .hero-09-objects__item.item-02 {
-    width: 350px !important;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
     max-width: none !important;
     min-width: 0;
   }
   .hero-09-objects__item.item-01 {
     top: 56%;
-    right: -36%;
+    right: -28%;
     -webkit-animation: mxd-float-a 2.8s infinite ease-in-out alternate;
             animation: mxd-float-a 2.8s infinite ease-in-out alternate;
   }
@@ -11181,12 +11183,14 @@ form textarea:required:valid {
   }
   .hero-09-objects__item.item-01,
   .hero-09-objects__item.item-02 {
-    width: 400px !important;
+    width: -webkit-max-content !important;
+    width: -moz-max-content !important;
+    width: max-content !important;
     max-width: none !important;
   }
   .hero-09-objects__item.item-01 {
     top: 54%;
-    right: -36%;
+    right: -28%;
   }
   .hero-09-objects__item.item-02 {
     left: -60%;
