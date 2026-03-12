@@ -260,12 +260,12 @@
                           .contact-form-error{color: #C86428;}
                           .contact-form-error i{color: #28C85A;}
                           .form__reply.is-visible {
-                            position: relative;
-                            background: var(--t-bg);
-                            padding: 4rem 2rem;
-                            border-radius: 1rem;
-                            z-index: 10;
+                            position: static;
+                            display: block;
+                            padding: 6rem 2rem;
+                            text-align: center;
                           }
+                          .contact-headline-hidden { display: none !important; }
                         </style>
           
                         <!-- Contact Form Start -->
@@ -563,8 +563,9 @@
 
           const data = await res.json();
           if(res.ok && data.ok){
-            document.querySelector('.form-container').querySelector('.form__reply').classList.add('is-visible');
+            document.querySelector('.mxd-section-inner-headline').classList.add('contact-headline-hidden');
             document.getElementById('contact-form').style.display = 'none';
+            document.querySelector('.form__reply').classList.add('is-visible');
           } else {
             submitError.innerHTML = data.error || 'Something went wrong. Please try again.';
             submitBtn.disabled = false;
