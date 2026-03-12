@@ -11117,7 +11117,7 @@ form textarea:required:valid {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 74%;
+    top: 86%;
   }
 }
 @media only screen and (min-width: 1600px) {
@@ -11137,8 +11137,22 @@ form textarea:required:valid {
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
-    top: 72%;
+    top: 84%;
   }
+}
+
+.mxd-hero__mark {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+     -ms-flex-align: center;
+         align-items: center;
+  gap: 0.8rem;
+  white-space: nowrap;
+}
+.mxd-hero__mark .mark-text {
+  white-space: nowrap;
 }
 
 .mxd-hero-09__more {
