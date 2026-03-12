@@ -8179,15 +8179,15 @@ form textarea:required:valid {
   to   { transform: translateY(0.9rem)  translateX(-50%); }
 }
 
-@-webkit-keyframes hero-quote-fill {
-  0%   { -webkit-text-stroke: 1.5px var(--t-bright); color: transparent; }
-  60%  { -webkit-text-stroke: 1px var(--t-bright);   color: transparent; }
-  100% { -webkit-text-stroke: 0px transparent;       color: var(--t-bright); }
+@-webkit-keyframes hero-quote-water {
+  0%   { -webkit-clip-path: inset(100% 0 0 0); clip-path: inset(100% 0 0 0); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { -webkit-clip-path: inset(0% 0 0 0);   clip-path: inset(0% 0 0 0); opacity: 1; }
 }
-@keyframes hero-quote-fill {
-  0%   { -webkit-text-stroke: 1.5px var(--t-bright); color: transparent; }
-  60%  { -webkit-text-stroke: 1px var(--t-bright);   color: transparent; }
-  100% { -webkit-text-stroke: 0px transparent;       color: var(--t-bright); }
+@keyframes hero-quote-water {
+  0%   { -webkit-clip-path: inset(100% 0 0 0); clip-path: inset(100% 0 0 0); opacity: 0; }
+  10%  { opacity: 1; }
+  100% { -webkit-clip-path: inset(0% 0 0 0);   clip-path: inset(0% 0 0 0); opacity: 1; }
 }
 
 .mxd-move-slow {
@@ -10991,9 +10991,23 @@ form textarea:required:valid {
   max-width: 440px;
   font-size: 3.6rem;
   line-height: 1.2;
-  -webkit-animation: hero-quote-fill 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
-          animation: hero-quote-fill 2.4s cubic-bezier(0.4, 0, 0.2, 1) 0.6s both;
 }
+
+.hero-quote__line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.1em;
+}
+
+.hero-quote__fill {
+  display: block;
+  -webkit-animation: hero-quote-water 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+          animation: hero-quote-water 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-quote__line:nth-child(1) .hero-quote__fill { -webkit-animation-delay: 0.3s; animation-delay: 0.3s; }
+.hero-quote__line:nth-child(2) .hero-quote__fill { -webkit-animation-delay: 0.55s; animation-delay: 0.55s; }
+.hero-quote__line:nth-child(3) .hero-quote__fill { -webkit-animation-delay: 0.8s; animation-delay: 0.8s; }
 
 .hero-quote__body {
   margin: 0 0 1.6rem 0;
@@ -11101,14 +11115,16 @@ form textarea:required:valid {
 }
 
 @-webkit-keyframes hero-color-fill {
-  0%   { -webkit-filter: grayscale(1) brightness(0.85); filter: grayscale(1) brightness(0.85); }
-  40%  { -webkit-filter: grayscale(0.6) brightness(0.92); filter: grayscale(0.6) brightness(0.92); }
-  100% { -webkit-filter: grayscale(0) brightness(1); filter: grayscale(0) brightness(1); }
+  0%   { -webkit-filter: grayscale(1) brightness(0.7) contrast(1.1); filter: grayscale(1) brightness(0.7) contrast(1.1); }
+  50%  { -webkit-filter: grayscale(0.8) brightness(0.85) contrast(1.05); filter: grayscale(0.8) brightness(0.85) contrast(1.05); }
+  80%  { -webkit-filter: grayscale(0.2) brightness(0.97) contrast(1); filter: grayscale(0.2) brightness(0.97) contrast(1); }
+  100% { -webkit-filter: grayscale(0) brightness(1) contrast(1); filter: grayscale(0) brightness(1) contrast(1); }
 }
 @keyframes hero-color-fill {
-  0%   { -webkit-filter: grayscale(1) brightness(0.85); filter: grayscale(1) brightness(0.85); }
-  40%  { -webkit-filter: grayscale(0.6) brightness(0.92); filter: grayscale(0.6) brightness(0.92); }
-  100% { -webkit-filter: grayscale(0) brightness(1); filter: grayscale(0) brightness(1); }
+  0%   { -webkit-filter: grayscale(1) brightness(0.7) contrast(1.1); filter: grayscale(1) brightness(0.7) contrast(1.1); }
+  50%  { -webkit-filter: grayscale(0.8) brightness(0.85) contrast(1.05); filter: grayscale(0.8) brightness(0.85) contrast(1.05); }
+  80%  { -webkit-filter: grayscale(0.2) brightness(0.97) contrast(1); filter: grayscale(0.2) brightness(0.97) contrast(1); }
+  100% { -webkit-filter: grayscale(0) brightness(1) contrast(1); filter: grayscale(0) brightness(1) contrast(1); }
 }
 
 .hero-09-objects__image {
@@ -11118,8 +11134,8 @@ form textarea:required:valid {
   padding-bottom: 4.5rem;
 }
 .hero-09-objects__image img {
-  -webkit-animation: hero-color-fill 2.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
-          animation: hero-color-fill 2.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s both;
+  -webkit-animation: hero-color-fill 4.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
+          animation: hero-color-fill 4.5s cubic-bezier(0.4, 0, 0.2, 1) 0.8s both;
 }
 .hero-09-objects__image::after {
   content: '';
