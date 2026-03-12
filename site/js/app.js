@@ -68,15 +68,54 @@ const imgLoad = imagesLoaded(content);
 const loadingWrap = document.querySelector('.loading-wrap');
 const loadingItems = loadingWrap ? loadingWrap.querySelectorAll('.loading__item') : [];
 const fadeInItems = document.querySelectorAll('.loading__fade');
+let loaderWordsInterval;
 
 function startLoader() {
   let counterElement = document.querySelector(".loader__count .count__text");
+  const loaderContent = document.querySelector(".loader__content");
+  const loaderCount = document.querySelector(".loader__count");
   let currentValue = 0;
+  const loaderWords = [
+    "Research",
+    "UX Strategy",
+    "IA",
+    "Wireframes",
+    "Prototyping",
+    "Testing",
+    "Accessibility",
+    "Design Systems",
+    "Interaction",
+    "Usability"
+  ];
+  let wordIndex = 0;
+  let wordElement = document.querySelector(".loader__word");
+
+  if (loaderContent && loaderCount && !wordElement) {
+    const wordsWrap = document.createElement("div");
+    wordsWrap.className = "loader__words";
+    wordElement = document.createElement("span");
+    wordElement.className = "loader__word is-visible";
+    wordElement.textContent = loaderWords[0];
+    wordsWrap.appendChild(wordElement);
+    loaderCount.insertAdjacentElement("afterend", wordsWrap);
+  }
+
+  if (wordElement && !loaderWordsInterval) {
+    loaderWordsInterval = setInterval(() => {
+      wordElement.classList.remove("is-visible");
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % loaderWords.length;
+        wordElement.textContent = loaderWords[wordIndex];
+        wordElement.classList.add("is-visible");
+      }, 180);
+    }, 700);
+  }
   function updateCounter() {
     if (currentValue < 100) {
       let increment = Math.floor(Math.random() * 10) + 1;
       currentValue = Math.min(currentValue + increment, 100);
       counterElement.textContent = currentValue;
+
       let delay = Math.floor(Math.random() * 120) + 25;
       setTimeout(updateCounter, delay);
     }
@@ -90,6 +129,10 @@ let loaderDismissed = false;
 function dismissLoader() {
   if (loaderDismissed) return;
   loaderDismissed = true;
+  if (loaderWordsInterval) {
+    clearInterval(loaderWordsInterval);
+    loaderWordsInterval = null;
+  }
   hideLoader();
   pageAppearance();
 }
