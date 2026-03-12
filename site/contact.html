@@ -556,7 +556,7 @@
 
           const data = await res.json();
           if(res.ok && data.ok){
-            document.querySelector('.form-container').querySelector('.form__reply').style.display = 'flex';
+            document.querySelector('.form-container').querySelector('.form__reply').classList.add('is-visible');
             document.getElementById('contact-form').style.display = 'none';
           } else {
             submitError.innerHTML = data.error || 'Something went wrong. Please try again.';
