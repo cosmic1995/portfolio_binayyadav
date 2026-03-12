@@ -11085,8 +11085,13 @@ form textarea:required:valid {
 .hero-09-objects__image {
   position: relative;
   max-width: 325px;
-  margin: 6rem auto 0;
+  margin: 2rem auto 0;
   padding-bottom: 4.5rem;
+}
+@media only screen and (min-width: 768px) {
+  .hero-09-objects__image {
+    margin: 3rem auto 0;
+  }
 }
 .hero-09-objects__image::after {
   content: '';
