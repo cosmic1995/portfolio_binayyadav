@@ -10950,7 +10950,7 @@ form textarea:required:valid {
 .hero-quote {
   color: var(--t-bright);
   margin: 0 0 2rem 0;
-  max-width: 520px;
+  max-width: 440px;
   font-size: 3.6rem;
   line-height: 1.2;
 }
@@ -10966,14 +10966,14 @@ form textarea:required:valid {
 @media only screen and (min-width: 768px) {
   .hero-quote {
     font-size: 4.4rem;
-    max-width: 600px;
+    max-width: 520px;
   }
 }
 
 @media only screen and (min-width: 1200px) {
   .hero-quote {
     font-size: 4.8rem;
-    max-width: 640px;
+    max-width: 560px;
   }
 }
 
