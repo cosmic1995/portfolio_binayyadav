@@ -11105,19 +11105,21 @@ form textarea:required:valid {
     z-index: 2;
   }
   .hero-09-objects__item .mxd-counter__descr {
-    max-width: none;
+    max-width: none !important;
+    white-space: nowrap !important;
   }
   .hero-09-objects__item.item-01,
   .hero-09-objects__item.item-02 {
-    width: 360px;
-    max-width: none;
+    width: 350px !important;
+    max-width: none !important;
+    min-width: 0;
   }
   .hero-09-objects__item.item-01 {
     top: 56%;
-    right: -50%;
+    right: -40%;
   }
   .hero-09-objects__item.item-02 {
-    left: -50%;
+    left: -40%;
     top: 56%;
   }
   .hero-09-objects__item.item-03 {
@@ -11132,19 +11134,19 @@ form textarea:required:valid {
 }
 @media only screen and (min-width: 1600px) {
   .hero-09-objects__item {
-    max-width: 220px;
+    max-width: none !important;
   }
   .hero-09-objects__item.item-01,
   .hero-09-objects__item.item-02 {
-    width: 400px;
-    max-width: none;
+    width: 400px !important;
+    max-width: none !important;
   }
   .hero-09-objects__item.item-01 {
     top: 54%;
-    right: -50%;
+    right: -40%;
   }
   .hero-09-objects__item.item-02 {
-    left: -50%;
+    left: -40%;
     top: 54%;
   }
   .hero-09-objects__item.item-03 {
