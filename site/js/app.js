@@ -75,11 +75,11 @@ function startLoader() {
 
   function updateCounter() {
     if (currentValue < 100) {
-      let increment = Math.floor(Math.random() * 10) + 1;
+      let increment = Math.floor(Math.random() * 15) + 3;
       currentValue = Math.min(currentValue + increment, 100);
       counterElement.textContent = currentValue;
 
-      let delay = Math.floor(Math.random() * 120) + 25;
+      let delay = Math.floor(Math.random() * 60) + 15;
       setTimeout(updateCounter, delay);
     }
   }
