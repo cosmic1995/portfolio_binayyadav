@@ -1064,6 +1064,15 @@ html.lenis, html.lenis body {
   padding-top: 5.2rem;
   padding-bottom: 5.2rem;
 }
+
+.case-study-shop-by-job .mxd-section.padding-hero-09 {
+  padding-top: 7rem;
+  padding-bottom: 4rem;
+}
+
+.case-study-shop-by-job .mxd-section.padding-hero-09.padding-grid-pre-mtext {
+  padding-bottom: 6rem;
+}
 @media only screen and (min-width: 768px) {
   .mxd-section.padding-hero-07 {
     padding-top: 16rem;
