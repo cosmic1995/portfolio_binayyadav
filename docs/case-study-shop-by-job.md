@@ -1,5 +1,6 @@
 # Shop by Job
-### Case Study · Lowe's India · 2025
+
+## Case Study · Lowe's India · 2025
 
 ---
 
@@ -12,11 +13,12 @@ Every section of this case study is written and ready to paste. Where you see a 
 ---
 
 ## HOOK
+
 *This is what appears above the fold. A hiring manager reads this in 6 seconds and decides whether to keep going.*
 
 ---
 
-**SHOP BY JOB**
+### SHOP BY JOB
 
 Led the end-to-end design of a job-first purchase feature for Lowe's Pro customers — from a self-identified problem through research, testing, and launch — delivering a **20% increase in transaction completion rates**.
 
@@ -86,7 +88,7 @@ A consumer who forgets to add an item to their cart has a minor inconvenience. A
 
 This is not a UI problem. It is a mental model problem.
 
-```
+```text
 Backwards   →   Job-first
 Exhausting  →   Streamlined
 Unforgiving →   Reliable
@@ -113,6 +115,7 @@ Design the feature so a complete project materials list is the default output �
 I did not wait for a research brief. I identified the problem myself, defined the research approach, and ran it before proposing the solution to the product team.
 
 **Methods used:**
+
 - Secondary research — Lowe's Pro customer data, industry reports on contractor purchasing behaviour, competitive analysis of B2B procurement tools
 - Direct sessions with 1–2 professional contractors — exploratory interviews focused on how they currently plan purchases for a job and where the existing platform fails them
 - Journey mapping of the current Pro purchase flow — mapping every step from job context to completed cart
@@ -278,7 +281,7 @@ That framing shaped how the project was received, resourced, and prioritised.
 
 ## REFLECTION
 
-*What I'd do differently, and what this project taught me.*
+### What I'd do differently, and what this project taught me
 
 ---
 
@@ -295,7 +298,7 @@ That framing shaped how the project was received, resourced, and prioritised.
 ## METADATA
 
 | Field | Detail |
-|---|---|
+| --- | --- |
 | Role | Lead UX Designer — full ownership, concept to launch |
 | Company | Lowe's India Pvt. Ltd |
 | Year | 2025 |
