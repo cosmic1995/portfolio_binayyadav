@@ -21163,8 +21163,6 @@ form textarea:required:valid {
   }
 }
 @media only screen and (min-width: 1600px) {
-  .mxd-project__paragraph {
-  }
   .mxd-project__paragraph.medium-text {
     margin-top: 0.6rem;
   }
