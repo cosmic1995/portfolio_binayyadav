@@ -1059,6 +1059,11 @@ html.lenis, html.lenis body {
 .mxd-section.padding-hero-08 {
   padding-top: 3.4rem;
 }
+
+.overview-tight {
+  padding-top: 5.2rem;
+  padding-bottom: 5.2rem;
+}
 @media only screen and (min-width: 768px) {
   .mxd-section.padding-hero-07 {
     padding-top: 16rem;
