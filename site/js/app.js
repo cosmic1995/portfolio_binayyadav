@@ -1510,6 +1510,36 @@ $(".btn-to-top").each(function() {
 // Scroll to Top Button End
 // --------------------------------------------- //
 
+// --------------------------------------------- //
+// Phone Number Toggle Start
+// --------------------------------------------- //
+const phoneToggle = document.getElementById('phone-toggle');
+const phoneDisplay = document.getElementById('phone-display');
+const phoneIcon = document.getElementById('phone-icon');
+
+if (phoneToggle && phoneDisplay && phoneIcon) {
+  let isRevealed = false;
+  const maskedPhone = '+91-XXXXXXXXXX';
+  const realPhone = '+91-7872622351';
+
+  phoneToggle.addEventListener('click', function() {
+    isRevealed = !isRevealed;
+    
+    if (isRevealed) {
+      phoneDisplay.textContent = realPhone;
+      phoneIcon.classList.remove('ph-eye');
+      phoneIcon.classList.add('ph-eye-slash');
+    } else {
+      phoneDisplay.textContent = maskedPhone;
+      phoneIcon.classList.remove('ph-eye-slash');
+      phoneIcon.classList.add('ph-eye');
+    }
+  });
+}
+// --------------------------------------------- //
+// Phone Number Toggle End
+// --------------------------------------------- //
+
 // ------------------------------------------------------------------------------ //
 // Parallax Universal (apply parallax effect to any element with a data-speed attribute) Start
 // ------------------------------------------------------------------------------ //
