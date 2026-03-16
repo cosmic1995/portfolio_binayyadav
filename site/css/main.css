@@ -5181,6 +5181,10 @@ form textarea:required:valid {
   transition: background-size 300ms, color 300ms;
   transition: background-size 300ms, color 300ms, -moz-background-size 300ms;
 }
+.mxd-project-item__name a b {
+  font-weight: var(--fw-bold);
+  color: var(--t-bright);
+}
 .no-touch .mxd-project-item__name a:hover {
   color: var(--t-bright);
   -moz-background-size: 0 1px, 100% 1px;

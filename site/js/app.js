@@ -864,6 +864,8 @@ animateInUp.forEach((element) => {
   }, {
     y: 0,
     opacity: 1,
+    duration: 1.2,
+    ease: 'power2.out',
     scrollTrigger: {
       trigger: element,
       toggleActions: 'play none none reverse',
